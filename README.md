@@ -8,4 +8,4 @@ Demonstrates how to implement a carousel with a UICollectionView.
 - The data source can be found in the scene dock.
 - The data source uses a `populateFromModel` pattern that might be familiar to some.
 
-![image](https://cloud.githubusercontent.com/assets/1186084/17925700/d7f9cc5e-69a2-11e6-8e84-2be617e9d106.png)
+![image](https://cloud.githubusercontent.com/assets/1186084/17925773/2339c516-69a3-11e6-8c2c-92839277edc3.png)
