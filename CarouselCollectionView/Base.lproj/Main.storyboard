@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4T3-G7-9fp">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="OFz-co-kW4">
+            <objects>
+                <tableViewController id="4T3-G7-9fp" customClass="ViewController" customModule="TestChildVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="200" sectionHeaderHeight="18" sectionFooterHeight="18" id="Wte-9H-p0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="7wS-ej-k8b">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ziz-yy-AWg">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ziz-yy-AWg" id="3L2-J9-2vE">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sra-to-Abv" customClass="DockingView" customModule="TestChildVC" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                                                    <subviews>
+                                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hb4-Ti-uqy">
+                                                            <rect key="frame" x="141" y="154" width="39" height="37"/>
+                                                        </pageControl>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="hb4-Ti-uqy" firstAttribute="centerX" secondItem="Sra-to-Abv" secondAttribute="centerX" id="gQ4-gX-Qmg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hb4-Ti-uqy" secondAttribute="bottom" constant="8" id="o2h-47-dc9"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="containedView" destination="1xc-g6-Cvh" id="rNQ-Ko-9IF"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sra-to-Abv" firstAttribute="leading" secondItem="3L2-J9-2vE" secondAttribute="leading" id="Nro-Pm-wCz"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sra-to-Abv" secondAttribute="trailing" id="VMJ-KL-LKt"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sra-to-Abv" secondAttribute="bottom" id="gBR-rb-jFg"/>
+                                                <constraint firstItem="Sra-to-Abv" firstAttribute="top" secondItem="3L2-J9-2vE" secondAttribute="top" id="pLH-g9-WhD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="4T3-G7-9fp" id="IXp-YG-NIw"/>
+                            <outlet property="delegate" destination="4T3-G7-9fp" id="KUw-TX-esI"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="kittensDataSource" destination="ni1-t5-G0l" id="MHs-VM-1k2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6p-DB-vMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-g6-Cvh" customClass="CarouselCollectionView" customModule="TestChildVC" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="1012" height="150"/>
+                    <color key="backgroundColor" red="0.90196079015731812" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="qQP-it-6Ku">
+                        <size key="itemSize" width="250" height="100"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells>
+                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pinkCell" id="VyK-Ct-yqS" customClass="KittenCollectionCell" customModule="TestChildVC" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="25" width="250" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gMA-y4-Y1g">
+                                        <rect key="frame" x="8" y="8" width="234" height="84"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <color key="backgroundColor" red="0.62745100259780884" green="0.4117647111415863" blue="0.9843137264251709" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottomMargin" secondItem="gMA-y4-Y1g" secondAttribute="bottom" id="MTt-e3-fiu"/>
+                                <constraint firstItem="gMA-y4-Y1g" firstAttribute="leading" secondItem="VyK-Ct-yqS" secondAttribute="leadingMargin" id="OJS-Zw-C87"/>
+                                <constraint firstItem="gMA-y4-Y1g" firstAttribute="top" secondItem="VyK-Ct-yqS" secondAttribute="topMargin" id="eF6-MZ-Ii6"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="gMA-y4-Y1g" secondAttribute="trailing" id="qqT-mM-HeG"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="imageView" destination="gMA-y4-Y1g" id="Ln5-W6-aZ7"/>
+                            </connections>
+                        </collectionViewCell>
+                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="greenCell" id="bDS-c1-tFH" customClass="KittenCollectionCell" customModule="TestChildVC" customModuleProvider="target">
+                            <rect key="frame" x="250" y="25" width="250" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="djT-A0-uwM">
+                                        <rect key="frame" x="8" y="8" width="234" height="84"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="djT-A0-uwM" firstAttribute="leading" secondItem="bDS-c1-tFH" secondAttribute="leadingMargin" id="Ese-lC-1qo"/>
+                                <constraint firstItem="djT-A0-uwM" firstAttribute="top" secondItem="bDS-c1-tFH" secondAttribute="topMargin" id="feC-SK-x2g"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="djT-A0-uwM" secondAttribute="trailing" id="oyO-vg-8V1"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="djT-A0-uwM" secondAttribute="bottom" id="pcP-F5-x1A"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="imageView" destination="djT-A0-uwM" id="nNu-ch-Jma"/>
+                            </connections>
+                        </collectionViewCell>
+                    </cells>
+                    <connections>
+                        <outlet property="dataSource" destination="ni1-t5-G0l" id="Z1N-UC-mCu"/>
+                        <outlet property="pageControl" destination="hb4-Ti-uqy" id="UGp-KG-JTb"/>
+                    </connections>
+                </collectionView>
+                <customObject id="ni1-t5-G0l" customClass="CollectionViewDataSource" customModule="TestChildVC" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-256" y="324"/>
+        </scene>
+    </scenes>
+</document>
