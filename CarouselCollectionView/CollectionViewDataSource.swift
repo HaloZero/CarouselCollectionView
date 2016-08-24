@@ -20,6 +20,12 @@ public struct CollectionMetaItem {
 }
 
 public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
+    /// This closure allows more customization on how population on cells are done. The default closure will
+    /// just call populateFromModel on the CollectionViewCell instance.
+    public var populateCell = { (cell: CollectionViewCell, item: CollectionMetaItem) -> Void in
+        cell.populateFromModel(item.model)
+    }
+
     public var sections: [CollectionMetaSection] = []
 
     public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -35,7 +41,7 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(item.identifier,
                                                                          forIndexPath: indexPath)
         if let cell = cell as? CollectionViewCell {
-            cell.populateFromModel(item.model)
+            populateCell(cell, item)
         } else {
             assertionFailure("Invalid cell type \(cell.dynamicType)")
         }
