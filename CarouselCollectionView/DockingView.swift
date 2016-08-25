@@ -14,10 +14,12 @@ class DockingView: UIView {
             if let containedView = self.containedView {
                 self.insertSubview(containedView, atIndex: 0)
                 containedView.translatesAutoresizingMaskIntoConstraints = false
-                containedView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
-                containedView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
-                containedView.leadingAnchor.constraintEqualToAnchor(self.leadingAnchor).active = true
-                containedView.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor).active = true
+                let attributes: [NSLayoutAttribute] = [.Top, .Bottom, .Leading, .Trailing]
+                let constraints: [NSLayoutConstraint] = attributes.map {
+                    NSLayoutConstraint(item: self, attribute: $0, relatedBy: .Equal,
+                        toItem: containedView, attribute: $0, multiplier: 1, constant: 0)
+                }
+                self.addConstraints(constraints)
             }
         }
     }
